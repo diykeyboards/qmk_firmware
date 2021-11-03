@@ -1,5 +1,8 @@
-#include QMK_KEYBOARD_H
+#include "dactyl_manuform.h"
+#include "action_layer.h"
+#include "eeconfig.h"
 
+extern keymap_config_t keymap_config;
 
 #define _BASE 0
 #define _RAISE 1
@@ -19,22 +22,22 @@
 #define KC_MU KC_MS_UP
 #define KC_MD KC_MS_DOWN
 #define KC_MB1 KC_MS_BTN1
-#define KC_MB2 KC_MS_BTN2
+#define KC_MB2 KC_MS_BTN1
 
 #define RAISE MO(_RAISE)
 #define LOWER MO(_LOWER)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-/* Base (qwerty)
+/* Base (dvorak)
  * ,----------------------------------,                             ,----------------------------------,
- * |   q  |   w  |   e  |   r  |   t  |                             |   y  |   u  |   i  |   o  |   p  |
+ * |   q  |   w  |   f  |   p  |   g  |                             |   j  |   l  |   u  |   y  |   :  |
  * |------+------+------+------+------|                             |-------------+------+------+------|
- * |   a  |   s  |   d  |   f  |   g  |                             |   h  |   j  |   k  |   l  |   ;  |
+ * |   a  |   r  |   s  |   t  |   d  |                             |   h  |   n  |   e  |   i  |   o  |
  * |------+------+------+------+------|                             |------|------+------+------+------|
- * |   z  |   x  |   c  |   v  |   b  |                             |   n  |   m  |   ,  |   .  |   '  |
+ * |   z  |   x  |   c  |   v  |   b  |                             |   K  |   m  |   ,  |   .  |   /?  |
  * |------+------+------+-------------,                             ,-------------+------+------+------,
- *        |  [   |   ]  |                                                         |   -  |   =  |
+ *        |  [   |   ]  |                                                         |   ,  |   .  |
  *        '------+------'-------------'                             '-------------'------+------'
  *                      | ESC  |  BS  |                             | SPACE|ENTER |
  *                      |  +   |   +  |                             |  +   |  +   |
@@ -43,18 +46,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                    '------+------' '------+------'
  *                                    | TAB  | HOME | | END  | DEL  |
  *                                    '------+------' '------+------'
- *                                    | Raise|  ~   | | GUI  | Lower|
+ *                                    | Raise |  ~   | | GUI  | Lower |
  *                                    '------+------' '------+------'
  */
 
 [_BASE] = LAYOUT( \
-  KC_Q, KC_W, KC_E,    KC_R,    KC_T,                                       KC_Y, KC_U,    KC_I,    KC_O,   KC_P,    \
-  KC_A, KC_S, KC_D,    KC_F,    KC_G,                                       KC_H, KC_J,    KC_K,    KC_L,   KC_SCLN, \
-  KC_Z, KC_X, KC_C,    KC_V,    KC_B,                                       KC_N, KC_M,    KC_COMM, KC_DOT, KC_QUOT, \
-  KC_LBRC,KC_RBRC,                                                       KC_PLUS, KC_EQL,
-                  RAISE,KC_SPC,                        KC_ENT, LOWER,
-                  KC_TAB,KC_HOME,                         KC_END,  KC_DEL,
-                  KC_BSPC, KC_GRV,                        KC_LGUI, KC_LALT
+  KC_Q,  KC_W,  KC_F,  KC_P,  KC_G,                                     KC_J, KC_L, KC_U,    KC_Y,   KC_SCLN, \
+  KC_A,  KC_R,  KC_S,  KC_T,  KC_D,                                     KC_H, KC_N, KC_E,    KC_I,   KC_O, \
+  KC_Z,  KC_X,  KC_C,  KC_V,  KC_B,                                     KC_K, KC_M, KC_COMM,    KC_DOT,   KC_SLSH, \
+           KC_LBRC, KC_RBRC,                                                             KC_COMM, KC_DOT,       \
+                                         SFT_ESC, CTL_BSPC,  ALT_SPC, SFT_ENT,                                  \
+                                         KC_TAB,  KC_HOME,   KC_END,  KC_DEL,                                   \
+                                         RAISE,   KC_GRV,    KC_LGUI, LOWER
 ),
 
 /* Raise
@@ -67,8 +70,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+-------------,                             ,-------------+------+------+------,
  *        |      |      |                                                         | mbtn |mbtn2 |
  *        '------+------'-------------'                             '-------------'------+------'
- *                      |      |      |                             |      |      |
- *                      |      |      |                             |      |      |
+ *                      | BL_TOGG | BL_BRTG |                             |      |      |
+ *                      | BL_DEC | BL_INC |                             |      |      |
  *                      |      |      |                             |      |      |
  *                      '------+------'                             '------+------'
  *                                    '------+------' '------+------'
@@ -83,15 +86,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ____, KC_ML, KC_MD, KC_MR, ____,                          KC_MUTE, KC_LEFT, KC_DOWN, KC_RIGHT, KC_PGDOWN, \
   ____, ____,  ____,  ____,  ____,                          KC_VOLD, KC_SLSH, KC_BSLS, KC_QUES,  KC_PIPE,   \
         ____,  ____,                                                          KC_MB1,  KC_MB2,              \
-                                   BL_TOGG, BL_STEP,  ____, ____,                                                 \
-                                   BL_INC,BL_DEC,  ____, ____,                                                 \
-                                   BL_BRTG, ____,  ____, ____                                                  \
+                                  BL_TOGG, BL_BRTG,  ____, ____,                                                 \
+                                   BL_DEC, BL_INC,  ____, ____,                                                 \
+                                   ____, ____,  ____, ____                                                  \
 ),
 /* Lower
  * ,----------------------------------,                             ,----------------------------------,
  * | F1   | F2   | F3   | F4   | F5   |                             |  F6  | F7   |  F8  |  F9  |  F10 |
  * |------+------+------+------+------|                             |-------------+------+------+------|
- * |  1   |  2   |  3   |  4   |  5   |                             |  6   |  7   |  8   |  9   |  0   |
+ * |  1   |  2   |  3   |  4   |  5   |                             |  6   |  7   |  8   |  9   |  10  |
  * |------+------+------+------+------|                             |------|------+------+------+------|
  * |  !   |  @   |  #   |  $   |  %   |                             |  ^   |  &   |  *   |  (   |  )   |
  * |------+------+------+-------------,                             ,-------------+------+------+------,
