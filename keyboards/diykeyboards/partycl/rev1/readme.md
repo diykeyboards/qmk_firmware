@@ -1,9 +1,5 @@
 # Partycl
 
-<<<<<<< refs/remotes/diykeyboards/diyk
-<<<<<<< refs/remotes/diykeyboards/diyk
-#![Partycl](https://i.imgur.com/q2M3uEU.jpg)
-
 A modular PCB system for Dactyl Manuform Keyboards and their derivatives.
 
 * Keyboard Maintainer: [Jesse Shipe](https://github.com/diykeyboards)
