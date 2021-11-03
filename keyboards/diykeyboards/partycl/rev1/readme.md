@@ -1,12 +1,12 @@
 # Partycl
 
-![Partycl](https://i.imgur.com/q2M3uEU.jpg)
+#![Partycl](https://i.imgur.com/q2M3uEU.jpg)
 
 A modular PCB system for Dactyl Manuform Keyboards and their derivatives.
 
-* Keyboard Maintainer: [Jack Humbert](https://github.com/jackhumbert)
-* Hardware Supported: Partycl PCB rev1, Partycl Mini Thumb, Partycl Colym
-* Hardware Availability: [DIY Keyboards](https://diykeyboards.com.com)
+* Keyboard Maintainer: [Jesse Shipe](https://github.com/diykeyboards)
+* Hardware Supported: Partycl PCB, Partycl Mini Thumb, Partycl Colym
+* Hardware Availability: [DIY Keyboards](https://diykeyboards.com)
 
 Make example for this keyboard (after setting up your build environment):
 
