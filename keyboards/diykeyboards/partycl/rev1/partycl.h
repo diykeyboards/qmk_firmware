@@ -1,28 +1,12 @@
 #pragma once
 
-/*
-#ifdef KEYBOARD_handwired_dactyl_manuform_4x6
-    #include "4x6.h"
-#elif KEYBOARD_handwired_dactyl_manuform_4x6
-    #include "4x6.h"
-#elif KEYBOARD_handwired_dactyl_manuform_5x6
-    #include "5x6.h"
-#elif KEYBOARD_handwired_dactyl_manuform_5x6_5
-    #include "5x6_5.h"
-#elif KEYBOARD_handwired_dactyl_manuform_5x7
-    #include "5x7.h"
-#ifdef KEYBOARD_handwired_dactyl_manuform_6x6
-    #include "6x6.h"
-
-#elif KEYBOARD_handwired_dactyl_manuform_dmote_62key
-    #include "62key.h"
-#elif KEYBOARD_handwired_dactyl_manuform_5x6_right_trackball
-#    include "5x6_right_trackball.h"
-#endif */
+//ifdef KEYBOARD_diykeyboards_partycl_rev1_6x4
+//    #include "6x4.h"
+//#elif KEYBOARD_handwired_dactyl_manuform_6x5
+//    #include "6x5.h"
+//#endif
 
 #include "quantum.h"
-
-
 #ifdef USE_I2C
 #include <stddef.h>
 #ifdef __AVR__

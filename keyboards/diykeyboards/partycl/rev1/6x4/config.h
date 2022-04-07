@@ -20,9 +20,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "config_common.h"
 
-//#define PRODUCT_ID      0x3636
-//#define DEVICE_VER      0x0001
-#define PRODUCT         Partycl (4x6)
+#define PRODUCT_ID      0x3636
+#define DEVICE_VER      0x0001
+#define PRODUCT         Partycl (6x4)
 
 /* key matrix size */
 // Rows are doubled-up
@@ -35,29 +35,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define DIODE_DIRECTION COL2ROW
 //#define DIODE_DIRECTION ROW2COL
-
-// WS2812 RGB LED strip input and number of LEDs
-#define RGB_DI_PIN D3
-#define RGBLED_NUM 50
-#define RGBLIGHT_SPLIT {25,25}
-//#define RGBLIGHT_ANIMATIONS
-
-/* Limit max LED brightness */
-//#define RGBLIGHT_LIMIT_VAL 200
-
-// Audio
-#define AUDIO_PIN B6
-#define NO_MUSIC_MODE
-
-// Space Savings
-#define NO_ACTION_MACRO
-#define NO_ACTION_FUNCTION
-#ifndef NO_DEBUG
-#define NO_DEBUG
-#endif // !NO_DEBUG
-#if !defined(NO_PRINT) && !defined(CONSOLE_ENABLE)
-#define NO_PRINT
-#endif // !NO_PRINT
 
 // Define Variables
 #define has_usb() is_keyboard_master()

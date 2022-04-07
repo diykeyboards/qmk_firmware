@@ -1,11 +1,11 @@
 {
-    "keyboard_name": "Dactyl Manuform 6x6",
+    "keyboard_name": "Partycl 6x4",
     "url": "",
     "maintainer": "qmk",
     "width": 17,
     "height": 9,
     "layouts": {
-        "LAYOUT_6x6": {
+        "LAYOUT_6x4": {
             "layout": [
                 {"label":"L00", "x":0, "y":0},
                 {"label":"L01", "x":1, "y":0},

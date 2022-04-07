@@ -17,11 +17,3 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
 #pragma once
-
-
-//#define USE_SERIAL
-#define USE_SERIAL_PD2
-#define MASTER_LEFT
-// #define MASTER_RIGHT
-//#define EE_HANDS
-// Rows are doubled-up
