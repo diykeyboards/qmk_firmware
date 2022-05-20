@@ -1,7 +1,6 @@
 /*
 Copyright 2012 Jun Wako <wakojun@gmail.com>
 Copyright 2015 Jack Humbert
-Copyright 2021 Jesse Shipe <jesse@diykeyboards.com>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -33,7 +32,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define MOUSEKEY_WHEEL_DELAY 0
 
 /* Set 0 if debouncing isn't needed */
-#define DEBOUNCE 5
+#define DEBOUNCE 6
+
+/* Set Bootmagic Reset Keys (Top Left/Top Right) */
+#define BOOTMAGIC_LITE_ROW 0
+#define BOOTMAGIC_LITE_COLUMN 5
+#define BOOTMAGIC_LITE_ROW_RIGHT 0
+#define BOOTMAGIC_LITE_COLUMN_RIGHT 5
 
 /* serial.c configuration for split keyboard */
 #define SOFT_SERIAL_PIN D2
@@ -52,7 +57,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   //#define AUDIO_TONE_MULTIPLEXING_RATE_DEFAULT 10
   //#define STARTUP_SONG SONG(ODE_TO_JOY)
   #define NO_MUSIC_MODE
-  #define AUDIO_CLICKY
+  //#define AUDIO_CLICKY
 #endif
 
 // WS2812 RGB LED strip input and number of LEDs
@@ -63,9 +68,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define RGBLIGHT_EFFECT_ALTERNATING
 #define RGBLIGHT_EFFECT_BREATHING
 //#define RGBLIGHT_EFFECT_CHRISTMAS
-#define RGBLIGHT_EFFECT_KNIGHT
+//#define RGBLIGHT_EFFECT_KNIGHT
 #define RGBLIGHT_EFFECT_RAINBOW_MOOD
-#define RGBLIGHT_EFFECT_RAINBOW_SWIRL
+//#define RGBLIGHT_EFFECT_RAINBOW_SWIRL
 //#define RGBLIGHT_EFFECT_RGB_TEST
 //#define RGBLIGHT_EFFECT_SNAKE
 //#define RGBLIGHT_EFFECT_STATIC_GRADIENT
